@@ -7,7 +7,7 @@ interface MapProps {
   mapCenter: { lat: number; lng: number };
 }
 
-const MapComponent: React.FC<MapProps> = () => {
+const MapComponent: React.FC<{}> = () => {
   const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY as string;
   const libraries = useMemo(() => ["places"], []);
 
@@ -74,7 +74,7 @@ const MapComponent: React.FC<MapProps> = () => {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey,
     libraries,
-  });
+  } as any);
 
   if (!isLoaded) {
     return <p>Loading...</p>;
