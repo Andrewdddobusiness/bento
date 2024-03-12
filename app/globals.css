@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Your existing CSS... */
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 237, 242, 244; /* Change to edf2f4 */
+  --background-end-rgb: 237, 242, 244; /* Change to match the start color */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  font-family: "CustomFont", sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+
+  /* New CSS rules */
+  a[href^="http://maps.google.com/maps"],
+  a[href^="https://maps.google.com/maps"],
+  a[href^="https://www.google.com/maps"]
+  {
+    display: none !important;
+  }
+
+  .gm-bundled-control .gmnoprint {
+    display: block;
+  }
+
+  .gmnoprint:not(.gm-bundled-control) {
+    display: none;
+  }
+}
+
+/* In your CSS file */
+@font-face {
+  font-family: "CustomFont";
+  src: url("/fonts/dark-poestry.ttf") format("truetype");
+  font-weight: normal; /* or bold */
+  font-style: normal; /* or italic */
+}
