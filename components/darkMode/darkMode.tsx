@@ -1,4 +1,3 @@
-// SwitchButton.jsx
 import React, { useState } from "react";
 
 const DarkModeSwitch = () => {
@@ -18,12 +17,17 @@ const DarkModeSwitch = () => {
     }
   };
 
+  const handleTouchStart = () => {
+    toggleDarkMode();
+  };
+
   return (
     <div className="flex flex-col w-full h-full bg-white overflow-hidden rounded-2xl relative items-center justify-center">
       <div
         className={`bg-light_grey_p dark:bg-gray-800 w-20 h-12 rounded-full p-1 flex items-center cursor-pointer transition-colors duration-300 justify-start z-50
         `}
         onClick={toggleDarkMode}
+        onTouchStart={handleTouchStart}
       >
         <div
           className={`w-8 h-8 bg-white rounded-full shadow-md transform transition-transform duration-300 ${

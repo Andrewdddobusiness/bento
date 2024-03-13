@@ -10,6 +10,10 @@ const Email = () => {
     window.location.href = `mailto:${emailAddress}`;
   };
 
+  const handleTouchStart = (e: any) => {
+    handleSendEmail(e);
+  };
+
   return (
     <div
       className="relative h-full w-full bg-white flex items-center justify-center overflow-hidden rounded"
@@ -24,6 +28,7 @@ const Email = () => {
         <button
           className="bg-white hover:bg-red_p text-dark_grey_p text-sm hover:text-white px-4 py-2 rounded-full transition-colors duration-300"
           onClick={handleSendEmail}
+          onTouchStart={handleTouchStart}
         >
           Contact Me
         </button>
