@@ -43,7 +43,7 @@ const Email = () => {
           Want to reach out?
         </h2>
         <button
-          className="bg-white dark:bg-gray-700 hover:bg-red_p text-dark_grey_p dark:text-white text-sm hover:text-white px-4 py-2 rounded-full transition-colors duration-300"
+          className="bg-white dark:bg-zinc-700 hover:bg-red_p text-dark_grey_p dark:text-white text-sm hover:text-white px-4 py-2 rounded-full transition-colors duration-300"
           onClick={handleSendEmail}
           onTouchStart={handleTouchStart}
         >
