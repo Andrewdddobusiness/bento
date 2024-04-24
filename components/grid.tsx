@@ -163,8 +163,8 @@ const MyResponsiveGrid: React.FC<MyResponsiveGridProps> = () => {
         cols={{ lg: 10, md: 8, sm: 4, xs: 2, xxs: 2 }}
         measureBeforeMount={false}
         useCSSTransforms={mounted}
-        isDraggable={true} // Disable dragging
-        isResizable={false} // Disable resizing
+        isDraggable={false}
+        isResizable={false}
       >
         {generateDOM()}
       </ResponsiveGridLayout>
