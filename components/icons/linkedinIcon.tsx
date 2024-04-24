@@ -22,12 +22,12 @@ const LinkedInIcon: React.FC<{}> = () => {
   };
 
   return (
-    <div className="h-full w-full flex items-center justify-center bg-blue_p rounded-2xl overflow-hidden">
+    <div className="h-full w-full flex items-center justify-center bg-blue_p dark:bg-zinc-800 rounded-2xl overflow-hidden">
       <div className="h-full w-full flex items-center justify-center transition duration-300 ease-in-out transform hover:scale-125 rounded-full">
         <Link href="https://www.linkedin.com/in/andrewdddo/" passHref>
           <FaLinkedinIn
             size={50}
-            className="text-white hover:text-blue-100 cursor-pointer"
+            className="text-white dark:text-blue_p hover:text-blue-100 dark:hover:text-blue_p dark:hover:opacity-50 cursor-pointer"
             onClick={!isMobile ? handleInteraction : undefined}
             onTouchStart={isMobile ? handleInteraction : undefined}
           />

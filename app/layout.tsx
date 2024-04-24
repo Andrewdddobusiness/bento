@@ -4,7 +4,6 @@ import "./globals.css";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import Head from "next/head";
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Andrew Do - Bento Portfolio",
@@ -19,7 +18,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${GeistSans.variable} ${GeistMono.variable} bg-light_grey_p`}
+      className={`${GeistSans.variable} ${GeistMono.variable} bg-light_grey_p  dark:bg-[#1a1a1a]`}
     >
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />

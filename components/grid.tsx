@@ -126,12 +126,15 @@ const MyResponsiveGrid: React.FC<MyResponsiveGridProps> = () => {
         ) : (
           <motion.div
             key="22"
-            className="rounded-3xl bg-white h-full"
+            className="rounded-3xl bg-light_grey_p  dark:bg-[#1a1a1a] h-full"
             initial={{ opacity: 0 }} // Initial opacity before animation
             animate={{ opacity: 1 }} // Opacity when animation completes
             transition={{ duration: 0.5, delay: 0.1 * i }} // Animation duration and delay
           >
-            <div key="22" className="rounded-3xl bg-white h-full ">
+            <div
+              key="22"
+              className="rounded-3xl bg-light_grey_p  dark:bg-[#1a1a1a] h-full "
+            >
               {l.i === "1" ? <Profile /> : null}
               {l.i === "2" ? <LinkedInIcon /> : null}
               {l.i === "3" ? (
@@ -160,7 +163,7 @@ const MyResponsiveGrid: React.FC<MyResponsiveGridProps> = () => {
         cols={{ lg: 10, md: 8, sm: 4, xs: 2, xxs: 2 }}
         measureBeforeMount={false}
         useCSSTransforms={mounted}
-        isDraggable={false} // Disable dragging
+        isDraggable={true} // Disable dragging
         isResizable={false} // Disable resizing
       >
         {generateDOM()}

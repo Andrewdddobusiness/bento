@@ -22,7 +22,7 @@ const InstagramIcon: React.FC<{}> = () => {
   };
 
   return (
-    <div className="h-full w-full flex items-center justify-center bg-red_p rounded-2xl overflow-hidden">
+    <div className="h-full w-full flex items-center justify-center bg-red_p dark:bg-zinc-800 rounded-2xl overflow-hidden">
       <div
         className="h-full w-full flex items-center justify-center transition duration-300 ease-in-out transform hover:scale-125 rounded-full"
         style={{
@@ -32,7 +32,7 @@ const InstagramIcon: React.FC<{}> = () => {
         <Link href="https://www.instagram.com/andrewdddo/" passHref>
           <FaInstagram
             size={50}
-            className="text-white hover:text-pink_p cursor-pointer"
+            className="text-white dark:text-red_p hover:text-pink_p dark:hover:text-red_p dark:hover:opacity-50 cursor-pointer"
             onClick={!isMobile ? handleInteraction : undefined}
             onTouchStart={isMobile ? handleInteraction : undefined}
           />

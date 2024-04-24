@@ -3,8 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const HeadStart: React.FC<{}> = () => {
+const HeadStart: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     const userAgent =
@@ -16,6 +17,18 @@ const HeadStart: React.FC<{}> = () => {
         )
       )
     );
+
+    const checkDarkMode = () => {
+      const isDark = document.documentElement.classList.contains("dark");
+      setIsDarkMode(isDark);
+    };
+
+    checkDarkMode(); // Check on initial render
+
+    const observer = new MutationObserver(() => checkDarkMode());
+    observer.observe(document.documentElement, { attributes: true });
+
+    return () => observer.disconnect();
   }, []);
 
   const handleInteraction = () => {
@@ -36,10 +49,9 @@ const HeadStart: React.FC<{}> = () => {
         onTouchStart={isMobile ? handleInteraction : undefined}
       >
         <Link href="https://headstart-kohl.vercel.app/" passHref>
-          {/* Next.js Image component */}
           <Image
-            src="/headstart-1.png"
-            alt="Headstart"
+            src={isDarkMode ? "/headstart-dark.png" : "/headstart-1.png"}
+            alt="HeadStart"
             width={650}
             height={450}
             className="text-white hover:text-blue-800 cursor-pointer"

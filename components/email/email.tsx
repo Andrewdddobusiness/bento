@@ -1,22 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import Contact from "@/public/contact.png";
+import ContactLight from "@/public/contact.png"; // Image for light mode
+import ContactDark from "@/public/contact-dark.png"; // Image for dark mode
 
 const Email = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const checkDarkMode = () => {
+      const isDark = document.documentElement.classList.contains("dark");
+      setIsDarkMode(isDark);
+    };
+
+    checkDarkMode(); // Initial check on component mount
+
+    const observer = new MutationObserver(() => checkDarkMode());
+    observer.observe(document.documentElement, { attributes: true });
+
+    return () => observer.disconnect();
+  }, []);
+
   const emailAddress = "andrewdddobusiness@gmail.com";
 
-  const handleSendEmail = (e: any) => {
+  const handleSendEmail = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     window.location.href = `mailto:${emailAddress}`;
   };
 
-  const handleTouchStart = (e: any) => {
+  const handleTouchStart = (e: React.TouchEvent<HTMLButtonElement>) => {
     handleSendEmail(e);
   };
 
   return (
     <div
-      className="relative h-full w-full bg-white flex items-center justify-center overflow-hidden rounded"
+      className="relative h-full w-full bg-white dark:bg-gray-800 flex items-center justify-center overflow-hidden rounded"
       style={{
         borderRadius: "20px",
       }}
@@ -26,7 +43,7 @@ const Email = () => {
           Want to reach out?
         </h2>
         <button
-          className="bg-white hover:bg-red_p text-dark_grey_p text-sm hover:text-white px-4 py-2 rounded-full transition-colors duration-300"
+          className="bg-white dark:bg-gray-700 hover:bg-red_p text-dark_grey_p dark:text-white text-sm hover:text-white px-4 py-2 rounded-full transition-colors duration-300"
           onClick={handleSendEmail}
           onTouchStart={handleTouchStart}
         >
@@ -35,7 +52,7 @@ const Email = () => {
       </div>
       <div className="absolute inset-0">
         <Image
-          src={Contact}
+          src={isDarkMode ? ContactDark : ContactLight}
           alt="Background Image"
           layout="fill"
           objectFit="cover"

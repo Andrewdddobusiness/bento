@@ -31,7 +31,7 @@ const Subs: React.FC<{
   const roundedSubscribers = Math.round(currentSubscribers / 1000) * 1000;
 
   return (
-    <div className="flex flex-col w-full h-full bg-white overflow-hidden rounded-2xl relative">
+    <div className="flex flex-col w-full h-full bg-white  dark:bg-zinc-800 overflow-hidden rounded-2xl relative">
       <div className="flex flex-col items-center justify-center">
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
           <div
@@ -44,7 +44,7 @@ const Subs: React.FC<{
               passHref
             >
               <>
-                <p className="text-4xl font-extrabold text-dark_grey_p">
+                <p className="text-4xl font-extrabold text-dark_grey_p dark:text-white">
                   {roundedSubscribers / 1000}k subs
                 </p>
                 <p className="text-zinc-500 font-light">100k goal</p>
