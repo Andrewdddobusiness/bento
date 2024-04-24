@@ -44,7 +44,7 @@ const Subs: React.FC<{
               passHref
             >
               <>
-                <p className="text-4xl font-extrabold text-dark_grey_p dark:text-white">
+                <p className="text-2xl md:text-4xl font-extrabold text-dark_grey_p dark:text-white">
                   {roundedSubscribers / 1000}k subs
                 </p>
                 <p className="text-zinc-500 font-light">100k goal</p>
