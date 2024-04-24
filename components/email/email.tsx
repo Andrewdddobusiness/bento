@@ -28,7 +28,7 @@ const Email = () => {
   };
 
   const handleTouchStart = (e: React.TouchEvent<HTMLButtonElement>) => {
-    handleSendEmail(e);
+    handleSendEmail(e as any);
   };
 
   return (

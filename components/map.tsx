@@ -133,7 +133,6 @@ const MapComponent: React.FC<{}> = () => {
 
   const { isLoaded } = useLoadScript({
     googleMapsApiKey,
-    libraries,
   });
 
   if (!isLoaded) {
