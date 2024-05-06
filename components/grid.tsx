@@ -143,7 +143,7 @@ const MyResponsiveGrid: React.FC<MyResponsiveGridProps> = () => {
               {l.i === "4" ? <Buildtopia /> : null}
               {l.i === "5" ? <DarkModeSwitch /> : null}
 
-              {l.i === "6" ? <YouTubeVideo videoId="GJXwi6YFuZk" /> : null}
+              {l.i === "6" ? <YouTubeVideo videoId="XsuJ3eY2pqk" /> : null}
               {l.i === "7" ? <Headstart /> : null}
               {l.i === "8" ? <InstagramIcon /> : null}
               {l.i === "9" ? <Email /> : null}
