@@ -20,7 +20,7 @@ const DarkModeSwitch = () => {
 
   return (
     <div className="flex flex-col w-full h-full bg-white dark:bg-zinc-800 overflow-hidden rounded-2xl relative items-center justify-center">
-      <div className="text-md md:text-xl mb-2 text-yellow_p">*NEW*</div>
+      <div className="text-md md:text-xl mb-2 text-yellow_p">*new*</div>
       <div
         className={`bg-light_grey_p dark:bg-zinc-700 w-20 h-12 rounded-full p-1 flex items-center cursor-pointer transition-colors duration-300 justify-start z-50`}
         onClick={toggleDarkMode}

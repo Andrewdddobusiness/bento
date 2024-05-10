@@ -28,6 +28,7 @@ const config: Config = {
         pink_p: "#fdc6d6",
         light_grey_p: "#edf2f4",
         dark_grey_p: "#17171a",
+        snow: "#fbfbfb",
       },
     },
   },

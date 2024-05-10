@@ -32,7 +32,7 @@ const HeadStart: React.FC = () => {
   }, []);
 
   const handleInteraction = () => {
-    window.location.href = "https://headstart-kohl.vercel.app/";
+    // window.location.href = "https://headstart-kohl.vercel.app/";
   };
 
   return (
@@ -48,15 +48,15 @@ const HeadStart: React.FC = () => {
         onClick={!isMobile ? handleInteraction : undefined}
         onTouchStart={isMobile ? handleInteraction : undefined}
       >
-        <Link href="https://headstart-kohl.vercel.app/" passHref>
-          <Image
-            src={isDarkMode ? "/headstart-dark.png" : "/headstart-1.png"}
-            alt="HeadStart"
-            width={650}
-            height={450}
-            className="text-white hover:text-blue-800 cursor-pointer"
-          />
-        </Link>
+        {/* <Link href="https://headstart-kohl.vercel.app/" passHref> */}
+        <Image
+          src={isDarkMode ? "/headstart-dark.png" : "/headstart-1.png"}
+          alt="HeadStart"
+          width={650}
+          height={450}
+          className="text-white hover:text-blue-800 cursor-pointer"
+        />
+        {/* </Link> */}
       </div>
     </div>
   );
