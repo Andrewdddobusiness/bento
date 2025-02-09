@@ -8,15 +8,8 @@ const Buildtopia = () => {
 
   // Set isMobile state
   useEffect(() => {
-    const userAgent =
-      typeof window.navigator === "undefined" ? "" : navigator.userAgent;
-    setIsMobile(
-      Boolean(
-        userAgent.match(
-          /Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i
-        )
-      )
-    );
+    const userAgent = typeof window.navigator === "undefined" ? "" : navigator.userAgent;
+    setIsMobile(Boolean(userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i)));
   }, []);
 
   // Observe changes to dark mode
@@ -38,7 +31,7 @@ const Buildtopia = () => {
   }, []); // Empty dependency array to ensure this effect runs once on component mount
 
   const handleInteraction = () => {
-    window.location.href = "https://www.buildtopia.lol";
+    window.location.href = "https://www.buildtopia.website";
   };
 
   return (
@@ -54,7 +47,7 @@ const Buildtopia = () => {
         onClick={!isMobile ? handleInteraction : undefined}
         onTouchStart={isMobile ? handleInteraction : undefined}
       >
-        <Link href="https://www.buildtopia.lol" passHref>
+        <Link href="https://www.buildtopia.website" passHref>
           <Image
             src={isDarkMode ? "/buildtopia-dark.png" : "/buildtopia-1.png"}
             alt="Buildtopia"
